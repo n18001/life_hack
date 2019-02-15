@@ -10,12 +10,6 @@ import pyautogui as gui
 from datetime import datetime
 
 
-# 新しいのを作るよ
-gui.hotkey('ctrl', 'shift', 'n')
-gui.hotkey('winleft', 'left')
-gui.click(240, 370, duration=0.25)
-
-
 # git add
 gui.typewrite('git add .', 0.05)
 gui.press('enter')
