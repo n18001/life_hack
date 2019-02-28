@@ -4,6 +4,7 @@
 # アニメを取ってくる
 # アニメの情報を載せる
 # 時々エラーでるよ
+# めっちゃ遅い
 import requests, json
 from datetime import datetime
 
