@@ -6,10 +6,9 @@ import requests, json
 from datetime import datetime
 
 
-# URL
+# api
 def getAnimeURL(year, cours):
-    URL = 'http://api.moemoe.tokyo/anime/v1/master/{}/{}'.format(year, cours)
-    return URL
+    return 'http://api.moemoe.tokyo/anime/v1/master/{}/{}'.format(year, cours)
 
 
 # Jsonを読む
