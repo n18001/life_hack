@@ -5,7 +5,7 @@
 # pyautoguiを入れてね
 #
 # 初期化とかは自分でやってほしいよ
-# commitは日付でするよ
+# commitは年月日でするよ
 import pyautogui as gui
 from datetime import datetime
 
@@ -16,7 +16,7 @@ gui.press('enter')
 
 
 # git commit
-today = datetime.now().strftime('%m%d')
+today = datetime.now().strftime('%Y%m%d')
 gui.typewrite("git commit -m '{}'".format(today), 0.05)
 gui.press('enter')
 
