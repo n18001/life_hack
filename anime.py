@@ -20,17 +20,17 @@ def readJson(url):
 
 
 # アニメの名前を取得
-def getAnimeName(x):
+def getAnimeName(data):
     anime_list = []
-    for animest in range(len(x)):
-        info = '・{}: {}'.format(x[animest]['title'], x[animest]['public_url'])
+    for animest in range(len(data)):
+        info = '・{}: {}'.format(data[animest]['title'], data[animest]['public_url'])
         anime_list.append(info)
     return anime_list
 
 
 # アニメの名前を出力
-def showAnimeName(x):
-    for name in x:
+def showAnimeName(anime_list):
+    for name in anime_list:
         desplay(name)
 
 
