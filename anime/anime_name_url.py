@@ -30,11 +30,11 @@ def getAnimeName(data):
 # アニメの名前を出力
 def showAnimeName(anime_list):
     for name in anime_list:
-        desplay(name)
+        display(name)
 
 
 # ディスプレイ
-def desplay(d):
+def display(d):
     print(d)
 
 
@@ -45,11 +45,11 @@ if __name__ == '__main__':
             year = int(input('年: '))
             cours = int(input('期(1~4): '))
             if not (2014 <= year <= int(datetime.now().strftime('%Y'))) or not (1 <= cours <= 4):
-                desplay('Error')
+                display('Error')
                 break
             else:
                 showAnimeName(getAnimeName(readJson(getAnimeURL(year, cours))))
                 break
         except ValueError:
-            desplay('ERROR')
+            display('ERROR')
             break
