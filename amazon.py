@@ -41,6 +41,7 @@ def display(d):
     print(d)
 
 
+# 実行
 if __name__ == '__main__':
     url = 'https://www.amazon.co.jp/gp/bestsellers/books/2501045051/ref=zg_bs_2501045051_pg_1?ie=UTF8&pg=1'
     pages = getAllURL(requesoup(url))
