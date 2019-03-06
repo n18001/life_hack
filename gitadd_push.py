@@ -24,7 +24,3 @@ gui.press('enter')
 # git push
 gui.typewrite('git push origin master', 0.05)
 gui.press('enter')
-
-
-# 気持ち悪い動作だよ
-# 綺麗に書くにはどうしたら良いんだよ
