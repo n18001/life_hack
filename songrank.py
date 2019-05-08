@@ -10,7 +10,7 @@ def requesoup(url):
     return bs4.BeautifulSoup(requests.get(url).text, 'lxml')
 
 
-# 歌詞ランキングを取ってくる
+# 歌詞情報を取ってくる
 def songRank(page):
     elem_box = ['SongRank SongName SingerName']
     for elem in page.find_all('article', class_='lst_boxArea'):
