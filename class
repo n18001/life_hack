@@ -1,0 +1,90 @@
+#!/usr/bin/python3
+from datetime import datetime as d
+from math import floor as f
+
+
+# 現在時刻からの時間の計算
+def checkClass(now_second):
+    # 1限
+    if 34200 <= now_second <= 39600:
+        limit = 39600 - now_second
+        info(limit, 0)
+    # 1休憩
+    elif 39601 <= now_second <= 40199:
+        limit = 40199 - now_second
+        info(limit, 1)
+    # 2限
+    elif 40200 <= now_second <= 45600:
+        limit = 45600 - now_second
+        info(limit, 0)
+    # 昼休み
+    elif 45601 <= now_second <= 49799:
+        limit = 49799 - now_second
+        info(limit, 1)
+    # 3限
+    elif 49800 <= now_second <= 55200:
+        limit = 55200 - now_second
+        info(limit, 0)
+    # 3休憩
+    elif 55201 <= now_second <= 55799:
+        limit = 55799 - now_second
+        info(limit, 1)
+    # 4限
+    elif 55800 <= now_second <= 61200:
+        limit = 61200 - now_second
+        info(limit, 0)
+    # 1限開始まで
+    elif 33600 <= now_second <= 34199:
+        info(limit, 3)
+    # その他
+    else:
+        info('お疲れ様です。', 2)
+
+
+# 曜日
+def weekd(now):
+    day_l = {
+        0: '月曜日',
+        1: '火曜日',
+        2: '水曜日',
+        3: '木曜日',
+        4: '金曜日',
+        5: '土曜日',
+        6: '日曜日'
+    }
+    return day_l[now]
+
+
+# 表示
+def info(d, num):
+    def class_limit(d):
+        print('授業終了まで残り約{}分{}秒'.format(f(d / 60), (d % 60)))
+
+    def vacat(d):
+        print('休憩終了まで残り約{}分{}秒'.format(f(d / 60), (d % 60)))
+
+    def display(d):
+        print(d)
+
+    def start(d):
+        print('授業開始まで残り{}分'.format(f(d / 60), (d % 60)))
+
+    if num == 0:
+        class_limit(d)
+    if num == 1:
+        vacat(d)
+    if num == 2:
+        display(d)
+    if num == 3:
+        start(d)
+
+
+# 実行
+if __name__ == '__main__':
+    info('>>>DAY: {}: {}'.format(d.now().strftime('%Y/%m/%d'), weekd(d.now().weekday())), 2)
+    info('>>>NOW: {}'.format(d.now().strftime('%H:%M:%S')), 2)
+    hour = d.now().hour
+    miunte = d.now().minute
+    second = d.now().second
+    now_second = (hour * 60 * 60) + (miunte * 60) + second
+    checkClass(now_second)
